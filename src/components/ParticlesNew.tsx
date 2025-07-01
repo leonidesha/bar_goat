@@ -37,7 +37,7 @@ const ParticlesNew = () => {
     () => ({
       background: {
         color: {
-          value: "#000000",
+          value: "transparent",
         },
       },
       fpsLimit: 120,
