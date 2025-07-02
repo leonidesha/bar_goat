@@ -5,7 +5,6 @@ import imagen2 from "./assets/img/background.jpg";
 import imagen4 from "./assets/img/carousel1.jpg";
 import imagen5 from "./assets/img/carousel2.jpg";
 import imagen6 from "./assets/img/carousel3.jpg";
-import React, { useRef, useState, useEffect } from "react";
 import CustomButton from "./components/CustomButton";
 /*
 function btnClick() {
