@@ -1,120 +1,67 @@
-body {
-  font-family: "Roboto", sans-serif;
-  display: flex;
-  flex-direction: column;
-  justify-content: center; /* Centra horizontalmente */
-  min-height: 100vh; /* Ocupa toda la altura de la ventana */
-  margin: 0;
-  padding: 0;
-}
-.backdiv {
-  top: -300px; /* Ajusta según sea necesario */
-  left: 0;
-
-  height: auto;
-  z-index: -1;
-  padding: 0;
-  margin: 0;
-  max-width: 100%;
-}
-.firstdiv {
-  display: block;
-}
-.imgback {
-  position: relative;
-  top: -300px;
-  opacity: 0.6;
-  width: 100vw; /* Ocupa todo el ancho de la ventana */
-  max-width: 100vw; /* No sobresale del ancho */
-  height: 1000px; /* Mantiene la proporción original */
-  display: block;
-  object-fit: cover; /* Opcional: recorta para cubrir el área si usas height fija */
-}
-.info {
-  width: 100%;
+html,
+body,
+#root {
   height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Centra horizontalmente */
-  height: fit-content;
+  margin: 0;
+  padding: 0;
 }
-.nombre {
-  z-index: 1;
+.sticky-container {
+  height: 100vh;
+  overflow-y: auto;
+  scroll-snap-type: y mandatory;
+}
+.sticky-slide {
+  height: 100vh;
+  width: 100vw;
+  position: sticky;
+  top: 0;
+  scroll-snap-align: start;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: white;
+}
+.sticky-slide img {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  margin-top: 20px;
-  align-items: center; /* Centra horizontalmente */
+  z-index: 0;
 }
-.texto {
-  position: absolute;
-  top: 150px;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Centra horizontalmente */
-}
-
-.bienvenida {
-  font-family: "Roboto", sans-serif;
-  color: white;
-  font-size: 5vw;
-  z-index: 1; /* Asegura que el texto esté por encima de la imagen */
-  animation: pulse 2s infinite;
-  text-align: center;
-  white-space: pre-wrap;
-  letter-spacing: 0em;
-}
-@keyframes pulse {
-  0%,
-  100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.01);
-  }
-}
-.scroll-item {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: all 0.6s ease-out;
-}
-.scroll-item.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-.content {
-  padding: 100px;
-  margin: 20px;
-}
-.descripcion {
-  font-family: "Roboto", sans-serif;
-  color: white;
-  font-size: 2vw;
-  z-index: 1; /* Asegura que el texto esté por encima de la imagen */
-  text-align: center;
-  white-space: pre-wrap;
-  letter-spacing: 0em;
-}
-.bienvenida,
-.descripcion {
-  /* ...otros estilos... */
-  text-shadow: 2px 2px 4px #000, /* Sombra principal */ -2px -2px 4px #000,
-    /* Sombra opuesta */ 2px -2px 4px #000, -2px 2px 4px #000;
-}
-
-.nombre {
-  text-shadow: 1px 1px 1px #000, /* Sombra principal */ -1px -1px 1px #000,
-    /* Sombra opuesta */ 1px -1px 1px #000, -1px 1px 1px #000;
-}
-.contenedor {
+.sticky-slide .slide-content {
   position: relative;
-  display: inline-block; /* o block, según tu layout */
-  width: 100vw; /* o el ancho que desees */
+  z-index: 1;
+  text-shadow: 0 2px 8px #000;
+}
+.fixed-center {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10; /* Asegúrate de que esté por encima de los slides */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /*background: rgba(0, 0, 0, 0.5); */
+  padding: 2rem;
+  border-radius: 1rem;
+  color: #fff;
+}
+.bienvenida {
+  font-size: 5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  text-shadow: 0 2px 8px #000;
+}
+.buttons {
+  display: flex;
+  flex-direction: row;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  box-sizing: border-box;
 }

@@ -1,8 +1,12 @@
 //import { useState } from 'react'
 import "./App.css";
 import imagen from "./assets/img/background2.jpg";
+import imagen2 from "./assets/img/background.jpg";
+import imagen4 from "./assets/img/carousel1.jpg";
+import imagen5 from "./assets/img/carousel2.jpg";
+import imagen6 from "./assets/img/carousel3.jpg";
 import React, { useRef, useState, useEffect } from "react";
-import Carousel from "./components/Carousel";
+import CustomButton from "./components/CustomButton";
 /*
 function btnClick() {
   // Aquí puedes agregar la lógica que desees al hacer clic en el botón
@@ -23,57 +27,65 @@ function btnClick() {
 }*/
 
 function App() {
-  useEffect(() => {
-    const elementos = document.querySelectorAll(".scroll-item");
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-          } else {
-            entry.target.classList.remove("visible");
-          }
-        });
-      },
-      { threshold: 0.3 }
-    );
-    elementos.forEach((el) => observer.observe(el));
+  return (
+    <>
+      <div className="fixed-center">
+        <h1 className="bienvenida">Bar GOAT</h1>
+        <div className="buttons">
+          <CustomButton text1="Ofertas" text2="Contáctanos"></CustomButton>
+        </div>
+      </div>
+      <div className="sticky-container">
+        <section className="sticky-slide">
+          <img src={imagen} alt="slide 1" />
+          <div className="slide-content"></div>
+        </section>
+        <section className="sticky-slide">
+          <img src={imagen2} alt="slide 2" />
+          <div className="slide-content"></div>
+        </section>
+        <section className="sticky-slide">
+          <img src={imagen4} alt="slide 3" />
+          <div className="slide-content"></div>
+        </section>
+        <section className="sticky-slide">
+          <img src={imagen5} alt="slide 3" />
+          <div className="slide-content"></div>
+        </section>
+        <section className="sticky-slide">
+          <img src={imagen6} alt="slide 3" />
+          <div className="slide-content"></div>
+        </section>
+      </div>
+    </>
+  );
+}
 
-    // Limpieza al desmontar el componente
-    return () => {
-      elementos.forEach((el) => observer.unobserve(el));
-    };
-  }, []);
+/*
+function App() {
   return (
     <>
       <div className="contenedor">
-        <h1 className="nombre">Bar GOAT</h1>
-        <img
-          className="imgback"
-          src={imagen}
-          alt="Background"
-          data-image-dimensions="1024x1424"
-          data-image-focal-point="0.5,0.5"
-          data-parent-ratio="0.6"
-          data-image-resolution="1500w"
-        />
         <div className="texto">
-          <h1 className="bienvenida scroll-item">
-            Bienvenido a Piano Bar GOAT
-          </h1>
-          <p className="descripcion scroll-item">
+          <h1 className="bienvenida">Bienvenido a Piano Bar GOAT</h1>
+          <p className="descripcion">
             Esto es un párrafo descriptivo de la bienvenida, aunque sea algo
             largo que se ajuste correctamente en la pantalla.
           </p>
+          <div className="boton-container">
+            <button type="button" className="btn btn-primary">
+              Ver contenido del menú
+            </button>
+            <button type="button" className="btn btn-primary">
+              Contactar por Whatsapp
+            </button>
+          </div>
         </div>
       </div>
-      <Carousel />
-      <div>
-        <div className="content info scroll-item">Mas información</div>
-        <div className="content descripcion scroll-item">Copyright</div>
-      </div>
     </>
-    /*
+  );
+}
+/*
     <>
       <ParticlesNew />
       <img className="imgback" src={imagen} />
@@ -101,8 +113,8 @@ function App() {
           </a>{" "}
         </p>
       </footer>
-    </>*/
+    </>
   );
-}
+}*/
 
 export default App;
