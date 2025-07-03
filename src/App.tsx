@@ -8,7 +8,7 @@ import imagen5 from "./assets/img/carousel2.jpg";
 import imagen6 from "./assets/img/carousel3.jpg";
 import CustomButton from "./components/CustomButton";
 import Productos from "./productos";
-import Admin from "./admin";
+import AdminLogin from "./AdminLogin";
 /*
 function btnClick() {
   // Aquí puedes agregar la lógica que desees al hacer clic en el botón
@@ -74,7 +74,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/menu" element={<Productos />} />
-        <Route path="/admin" element={<Admin />} />
+        <Route path="/admin" element={<AdminLogin />} />
       </Routes>
     </BrowserRouter>
   );

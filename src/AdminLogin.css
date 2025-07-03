@@ -1,0 +1,53 @@
+.root-div {
+  background-image: url("./assets/img/backgroundmenu.jpg");
+  height: 100vh;
+  background-size: cover;
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+}
+
+.container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 50px;
+  box-sizing: border-box;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  justify-content: center;
+  position: relative;
+  color: #fff;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: center;
+  height: fit-content;
+  background: rgba(0, 0, 0, 0.3); /* Fondo semitransparente para ver el blur */
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px); /* Soporte Safari */
+}
+.form-row {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  width: 100%;
+  max-width: 350px;
+}
+
+.form-row label {
+  flex: 0 0 110px;
+  text-align: right;
+}
+
+.form-row input {
+  flex: 1 1 auto;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  border: none;
+  font-size: 1rem;
+}
