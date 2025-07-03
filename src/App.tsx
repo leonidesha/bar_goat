@@ -7,7 +7,7 @@ import imagen4 from "./assets/img/carousel1.jpg";
 import imagen5 from "./assets/img/carousel2.jpg";
 import imagen6 from "./assets/img/carousel3.jpg";
 import CustomButton from "./components/CustomButton";
-import Menu from "./menu";
+import Productos from "./productos";
 import Admin from "./admin";
 /*
 function btnClick() {
@@ -73,7 +73,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/menu" element={<Menu />} />
+        <Route path="/menu" element={<Productos />} />
         <Route path="/admin" element={<Admin />} />
       </Routes>
     </BrowserRouter>
