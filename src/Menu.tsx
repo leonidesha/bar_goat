@@ -2,7 +2,7 @@ import CardMenu from "./components/CardMenu";
 import bg2 from "./assets/img/copa.png";
 
 import "./Menu.css";
-export default function Menu() {
+export default function menu() {
   return (
     <div className="menu-bg">
       <div className="main">
