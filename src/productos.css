@@ -7,6 +7,7 @@
   background-size: auto; /* o elimina esta línea */
   background-position: top left;
   width: "100%";
+  background-attachment: fixed;
 }
 .menu-bg::before {
   content: "";
@@ -21,7 +22,7 @@
     0,
     0,
     0,
-    0.8
+    0.7
   ); /* Cambia el color y opacidad según lo que necesites */
   z-index: 1;
   pointer-events: none;
