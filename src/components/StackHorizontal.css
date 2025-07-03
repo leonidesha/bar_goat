@@ -1,0 +1,33 @@
+.stack-horizontal.sticky {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  width: 100%;
+  overflow-x: auto;
+  padding: 1rem 0;
+  margin-bottom: 2rem;
+  scrollbar-width: thin;
+}
+.stack-horizontal-item {
+  white-space: nowrap;
+  font-size: 1.2rem;
+  color: orange;
+  padding: 0.5rem 1.5rem;
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+.stack-horizontal {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE y Edge */
+}
+
+.stack-horizontal::-webkit-scrollbar {
+  height: 0px;
+  background: transparent;
+  display: none; /* Chrome, Safari y Opera */
+}

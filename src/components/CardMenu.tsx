@@ -3,13 +3,15 @@ interface CardMenuProps {
   title?: string;
   text?: string;
   extra?: string;
-  reverse?: boolean; // Nueva prop
+  reverse?: boolean;
+  id?: string; // Añadido para permitir un ID opcional
 }
 
 function CardMenu(props: CardMenuProps) {
-  const { imageSrc, title, text, extra, reverse } = props;
+  const { id, imageSrc, title, text, extra, reverse } = props;
   return (
     <div
+      id={id}
       className="card-menu-horizontal"
       style={{
         width: "100%",
