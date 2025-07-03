@@ -3,6 +3,8 @@
   top: 0;
   z-index: 20;
   background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(8px); /* <-- Efecto de desenfoque */
+  -webkit-backdrop-filter: blur(8px); /* Soporte Safari */
   display: flex;
   flex-direction: row;
   gap: 2rem;
@@ -10,7 +12,7 @@
   overflow-x: auto;
   padding: 1rem 0;
   margin-bottom: 2rem;
-  scrollbar-width: thin;
+  scrollbar-width: none;
 }
 .stack-horizontal-item {
   white-space: nowrap;

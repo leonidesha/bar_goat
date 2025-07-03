@@ -28,20 +28,6 @@ export default function Productos() {
             "Postres",
             "Promos",
             "Entradas",
-            "Platos principales",
-            "Bebidas",
-            "Postres",
-            "Promos",
-            "Entradas",
-            "Platos principales",
-            "Bebidas",
-            "Postres",
-            "Promos",
-            "Entradas",
-            "Platos principales",
-            "Bebidas",
-            "Postres",
-            "Promos",
           ]}
         />
         <CardMenu
