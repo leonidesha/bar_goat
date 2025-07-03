@@ -1,11 +1,14 @@
 //import { useState } from 'react'
 import "./App.css";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import imagen from "./assets/img/background2.jpg";
 import imagen2 from "./assets/img/background.jpg";
 import imagen4 from "./assets/img/carousel1.jpg";
 import imagen5 from "./assets/img/carousel2.jpg";
 import imagen6 from "./assets/img/carousel3.jpg";
 import CustomButton from "./components/CustomButton";
+import Menu from "./menu";
+import Admin from "./admin";
 /*
 function btnClick() {
   // Aquí puedes agregar la lógica que desees al hacer clic en el botón
@@ -22,16 +25,21 @@ function btnClick() {
     })
     .catch((error) => {
       console.error("Error:", error);
-    });
+    }); text2="Contáctanos"
 }*/
 
-function App() {
+function Home() {
   return (
     <>
       <div className="fixed-center">
         <h1 className="bienvenida">Bar GOAT</h1>
         <div className="buttons">
-          <CustomButton text1="Ofertas" text2="Contáctanos"></CustomButton>
+          <Link to="/menu">
+            <CustomButton text1="Ofertas"></CustomButton>
+          </Link>
+          <a href="https://api.whatsapp.com/send?phone=5356558380&text=Hola">
+            <CustomButton text1="Contáctanos"></CustomButton>
+          </a>
         </div>
       </div>
       <div className="sticky-container">
@@ -60,6 +68,17 @@ function App() {
   );
 }
 
+function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/menu" element={<Menu />} />
+        <Route path="/admin" element={<Admin />} />
+      </Routes>
+    </BrowserRouter>
+  );
+}
 /*
 function App() {
   return (

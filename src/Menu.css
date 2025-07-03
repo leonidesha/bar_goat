@@ -1,0 +1,41 @@
+.menu-bg {
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-image: url("./assets/img/backgroundmenu.jpg");
+  background-repeat: repeat;
+  background-size: auto; /* o elimina esta línea */
+  background-position: top left;
+  width: "100%";
+}
+.menu-bg::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(
+    0,
+    0,
+    0,
+    0.8
+  ); /* Cambia el color y opacidad según lo que necesites */
+  z-index: 1;
+  pointer-events: none;
+}
+.main {
+  width: 100%;
+  max-width: none;
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  border-radius: 1rem;
+  color: orange;
+}
