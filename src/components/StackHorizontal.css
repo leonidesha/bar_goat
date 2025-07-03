@@ -33,3 +33,7 @@
   background: transparent;
   display: none; /* Chrome, Safari y Opera */
 }
+.stack-horizontal-item.active {
+  background: orange;
+  color: #222;
+}
