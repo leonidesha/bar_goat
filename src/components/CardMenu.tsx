@@ -1,3 +1,4 @@
+import "./CardMenu.css";
 interface CardMenuProps {
   imageSrc?: string;
   title?: string;
@@ -14,31 +15,13 @@ function CardMenu(props: CardMenuProps) {
       id={id}
       className="card-menu-horizontal"
       style={{
-        width: "100%",
-        display: "flex",
         flexDirection: reverse ? "row-reverse" : "row", // Alterna dirección
-        background: "transparent",
-        borderRadius: "1rem",
-        overflow: "hidden",
-        boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
-        marginBottom: "1.5rem",
-        minHeight: "200px",
       }}
     >
-      <div
-        style={{
-          flex: "0 0 200px",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-      >
+      <div className="card-menu-image">
         <img
+          className="card-menu-img"
           style={{
-            width: "100%",
-            height: "200px",
-            objectFit: "contain",
-            transform: "rotate(30deg)",
             borderRadius: reverse ? "0 1rem 1rem 0" : "1rem 0 0 1rem",
           }}
           src={imageSrc}
@@ -46,12 +29,8 @@ function CardMenu(props: CardMenuProps) {
         />
       </div>
       <div
+        className="card-menu-content"
         style={{
-          flex: "1 1 0",
-          padding: "1.5rem",
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
           textAlign: reverse ? "right" : "left",
         }}
       >
