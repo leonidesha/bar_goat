@@ -1,9 +1,9 @@
-ul {
+.custom-button {
   padding: 0;
   list-style-type: none;
 }
 
-li {
+.custom-button-item {
   font-size: 25px;
   width: 8em;
   height: 2em;
@@ -14,8 +14,8 @@ li {
   cursor: pointer;
 }
 
-li::before,
-li::after {
+.custom-button-item::before,
+.custom-button-item::after {
   content: "";
   position: absolute;
   width: inherit;
@@ -23,21 +23,21 @@ li::after {
   z-index: -1;
 }
 
-li::before {
+.custom-button-item::before {
   height: 80%;
   top: 10%;
   left: calc(-0.15em - 0.08em * 2);
   filter: brightness(0.8);
 }
 
-li::after {
+.custom-button-item::after {
   height: 60%;
   top: 20%;
   left: calc(-0.15em * 2 - 0.08em * 3);
   filter: brightness(0.6);
 }
 
-li span {
+.custom-button-item span {
   position: relative;
   height: 120%;
   top: -10%;
@@ -53,6 +53,6 @@ li span {
   transition: 0.3s;
 }
 
-li:hover span {
+.custom-button-item:hover span {
   transform: translateX(0.15em);
 }

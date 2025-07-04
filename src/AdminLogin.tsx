@@ -14,7 +14,7 @@ export default function AdminLogin() {
     e.preventDefault();
 
     try {
-      const response = await fetch("http://127.0.0.1:3000/api/login", {
+      const response = await fetch("http://192.168.204.202:3000/api/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ usuario, password }),
@@ -37,37 +37,40 @@ export default function AdminLogin() {
 
   return (
     <div className="root-div">
-      <div className="container">
-        <form onSubmit={handleLogin}>
-          <div className="form-row">
-            <label htmlFor="usuario">Usuario:</label>
-            <input
-              id="usuario"
-              type="text"
-              placeholder="Nombre de usuario"
-              value={usuario}
-              onChange={(e) => setUsuario(e.target.value)}
-            />
-          </div>
-          <div className="form-row">
-            <label htmlFor="password">Contraseña:</label>
-            <input
-              id="password"
-              type="password"
-              placeholder="Contraseña"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-          </div>
-          {error && (
-            <div style={{ color: "red", marginBottom: 10 }}>{error}</div>
-          )}
-          <div className="btn-container">
-            <button className="btn btn-primary" type="submit">
-              Iniciar sesión
-            </button>
-          </div>
-        </form>
+      <div className="div-anim">
+        <div className="container-login">
+          <form onSubmit={handleLogin}>
+            <div className="form-row">
+              <label htmlFor="usuario">Usuario:</label>
+              <input
+                id="usuario"
+                type="text"
+                placeholder="Nombre de usuario"
+                value={usuario}
+                onChange={(e) => setUsuario(e.target.value)}
+              />
+            </div>
+            <div className="form-row">
+              <label htmlFor="password">Contraseña:</label>
+              <input
+                id="password"
+                type="password"
+                placeholder="Contraseña"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+            </div>
+
+            {error && (
+              <div style={{ color: "red", marginBottom: 10 }}>{error}</div>
+            )}
+            <div className="btn-container">
+              <button className="btn btn-primary" type="submit">
+                Iniciar sesión
+              </button>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   );

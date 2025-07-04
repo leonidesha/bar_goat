@@ -7,7 +7,7 @@
   align-items: center; /* Centra verticalmente */
 }
 
-.container {
+.container-login {
   max-width: 400px;
   margin: 0 auto;
   padding: 50px;
@@ -28,8 +28,28 @@
   background: rgba(0, 0, 0, 0.3); /* Fondo semitransparente para ver el blur */
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px); /* Soporte Safari */
+  overflow: hidden;
+  z-index: 20;
+}
+.div-animasd {
+  content: "";
+  position: absolute;
+  width: 150px;
+  height: 140%;
+  background: linear-gradient(#ff00c8, #6aff00);
+  animation: animate 3s linear infinite;
+}
+
+@keyframes animate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 .form-row {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: flex-start;

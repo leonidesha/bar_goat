@@ -1,10 +1,12 @@
 import "./ManagePage.css";
+import TableComponent from "./components/TableComponent";
 function ManagePage() {
   return (
-    <div>
-      <h1>Manage Page</h1>
-      <p>This is the manage page where you can manage your settings.</p>
-    </div>
+    <>
+      <div className="manage-page">
+        <TableComponent />
+      </div>
+    </>
   );
 }
 export default ManagePage;
