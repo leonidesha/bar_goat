@@ -9,6 +9,9 @@ import imagen6 from "./assets/img/carousel3.jpg";
 import CustomButton from "./components/CustomButton";
 import Productos from "./productos";
 import AdminLogin from "./AdminLogin";
+import { AuthProvider } from "./components/AuthContext";
+import PrivateRoute from "./components/PrivateRoute";
+import ManagePage from "./ManagePage";
 /*
 function btnClick() {
   // Aquí puedes agregar la lógica que desees al hacer clic en el botón
@@ -75,6 +78,14 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/menu" element={<Productos />} />
         <Route path="/admin" element={<AdminLogin />} />
+        <Route
+          path="/manage"
+          element={
+            <PrivateRoute>
+              <ManagePage />
+            </PrivateRoute>
+          }
+        />
       </Routes>
     </BrowserRouter>
   );
