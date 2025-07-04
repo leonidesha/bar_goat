@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom"; // <-- Agrega esto
+import { useNavigate } from "react-router-dom";
 import "./AdminLogin.css";
 import { useAuth } from "./components/AuthContext";
 
@@ -8,18 +8,32 @@ export default function AdminLogin() {
   const [usuario, setUsuario] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-  const navigate = useNavigate(); // <-- Agrega esto
+  const navigate = useNavigate();
 
-  function handleLogin(e: React.FormEvent) {
+  const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (usuario === "admin" && password === "Asdf.1230") {
-      login();
-      setError("");
-      navigate("/manage"); // <-- Redirige después de login exitoso
-    } else {
-      setError("Usuario o contraseña incorrectos");
+
+    try {
+      const response = await fetch("http://127.0.0.1:3000/api/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ usuario, password }),
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        console.log("Login successful:", data);
+        login(data.usuario, data.token); // Pass the received token to your auth context
+        navigate("/manage");
+      } else {
+        setError("Credenciales incorrectas");
+        console.error("Login failed:", response.statusText);
+      }
+    } catch (err) {
+      setError("Error de conexión");
+      console.error("Login error:", err);
     }
-  }
+  };
 
   return (
     <div className="root-div">

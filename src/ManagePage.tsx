@@ -1,3 +1,4 @@
+import "./ManagePage.css";
 function ManagePage() {
   return (
     <div>
