@@ -38,7 +38,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     localStorage.setItem("user", username);
     localStorage.setItem("token", token);
     // Opcional: Establece tiempo de expiración (ej. 1 hora)
-    localStorage.setItem("expiresAt", String(Date.now() + 300));
+    localStorage.setItem("expiresAt", String(Date.now() + 1500000)); // 25 minutos
   };
 
   const logout = () => {
